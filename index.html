@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Age calculator app</title>
+  </head>
+  <body>
+    <main>
+      <div class="calculator">
+        <form action="" class="js-form calculator__form">
+          <ul>
+            <li>
+              <label for="day">day</label>
+              <input type="text" name="day" id="day" class="js-input-day" />
+              <p class="js-warning"></p>
+            </li>
+            <li>
+              <label for="month">month</label>
+              <input
+                type="text"
+                name="month"
+                id="month"
+                class="js-input-month"
+              />
+              <p class="js-warning"></p>
+            </li>
+            <li>
+              <label for="year">year</label>
+              <input type="text" name="year" id="year" class="js-input-year" />
+              <p class="js-warning"></p>
+            </li>
+          </ul>
+
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="46"
+              height="44"
+              viewBox="0 0 46 44"
+            >
+              <g fill="none" stroke="#FFF" stroke-width="2">
+                <path
+                  d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+                />
+              </g>
+            </svg>
+          </button>
+        </form>
+
+        <div class="calculator__result">
+          <p><span class="js-display-year">38 </span> years</p>
+          <p><span class="js-display-month">3 </span>months</p>
+          <p><span class="js-display-day">26 </span>days</p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">lupeMorales</a>.
+      </p>
+    </footer>
+    <script src=".main.js"></script>
+  </body>
+</html>

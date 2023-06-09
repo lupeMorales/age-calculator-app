@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: hsl(0, 0%, 94%);
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calculator {
+  width: auto;
+  height: auto;
+  padding: 40px 55px;
+  border-radius: 20px 20px 150px 20px;
+  background-color: hsl(0, 0%, 100%);
+}
+.calculator__form {
+  position: relative;
+  padding: 20px 180px 48px 0;
+  border-bottom: 2px solid hsl(0, 0%, 94%);
+}
+.calculator__form ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.calculator__form ul li {
+  display: flex;
+  flex-direction: column;
+}
+.calculator__form label {
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+  color: hsl(0, 1%, 44%);
+}
+.calculator__form input {
+  display: inline-block;
+  width: 130px;
+  height: 70px;
+  padding: 20px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 0.3px solid hsl(0, 0%, 86%);
+  outline-color: hsl(259, 100%, 65%);
+  cursor: pointer;
+  caret-color: hsl(259, 100%, 65%);
+  caret-shape: bar;
+}
+.calculator__form input:hover {
+  border-color: hsl(259, 100%, 65%);
+}
+.calculator__form button {
+  position: absolute;
+  padding: 20px;
+  background-color: hsl(0, 0%, 8%);
+  border: none;
+  border-radius: 50%;
+  right: 0;
+  transform: translateY(5px);
+}
+.calculator__form button:hover {
+  background-color: hsl(259, 100%, 65%);
+}
+.calculator__result {
+  padding: 60px 0 20px;
+}
+.calculator__result p {
+  line-height: 1.2em;
+  font-size: 10rem;
+  font-weight: 800;
+  font-style: italic;
+}
+.calculator__result p span {
+  color: hsl(259, 100%, 65%);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5vh;
+  font-size: 1rem;
+}
+footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: hsl(259, 100%, 65%);
+}
+
+/*# sourceMappingURL=style.css.map */
