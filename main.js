@@ -55,7 +55,7 @@ function calculateAge() {
   displayYear.innerHTML = currentYear - inputYear.value;
 }
 
-function autoNextInput(input, index, list) {
+/* function autoNextInput(input, index, list) {
   const next = list[index + 1];
 
   if (!next) {
@@ -67,14 +67,14 @@ function autoNextInput(input, index, list) {
       next.focus();
     }
   });
-}
+} */
 
-document.querySelectorAll("[maxlength]").forEach(autoNextInput);
+/* document.querySelectorAll("[maxlength]").forEach(autoNextInput); */
 
 // validate form
 
 function onlyNumbersAllow(ev) {
-  if (isNaN(ev.key)) {
+  if (isNaN(ev.key) && ev.key !== "Backspace") {
     ev.preventDefault();
   }
 }
@@ -119,6 +119,15 @@ function showWarning() {
     calculateAge();
   }
 }
+
+function pressEnter(ev) {
+  if (ev.keyCode === 13) {
+    ev.preventDefault();
+    validateDate();
+    showWarning();
+    return false;
+  }
+}
 function showResult(ev) {
   ev.preventDefault();
   validateDate();
@@ -128,6 +137,7 @@ function showResult(ev) {
 inputDay.addEventListener("keydown", onlyNumbersAllow);
 inputMonth.addEventListener("keydown", onlyNumbersAllow);
 inputYear.addEventListener("keydown", onlyNumbersAllow);
+inputYear.addEventListener("keydown", pressEnter);
 
 button.addEventListener("click", showResult);
 
