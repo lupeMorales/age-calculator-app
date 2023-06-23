@@ -27,28 +27,38 @@
         <form action="" class="js-form calculator__form">
           <ul>
             <li>
-              <label for="day">day</label>
-              <input type="text" name="day" id="day" class="js-input-day" />
-              <p class="js-warning"></p>
+              <label for="day" class="js-title">day</label>
+              <input
+                type="text"
+                name="day"
+                id="day"
+                class="js-input-day input"
+              />
+              <p class="js-warning-day warning"></p>
             </li>
             <li>
-              <label for="month">month</label>
+              <label for="month" class="js-title">month</label>
               <input
                 type="text"
                 name="month"
                 id="month"
-                class="js-input-month"
+                class="js-input-month input"
               />
-              <p class="js-warning"></p>
+              <p class="js-warning-month warning"></p>
             </li>
             <li>
-              <label for="year">year</label>
-              <input type="text" name="year" id="year" class="js-input-year" />
-              <p class="js-warning"></p>
+              <label for="year" class="js-title">year</label>
+              <input
+                type="text"
+                name="year"
+                id="year"
+                class="js-input-year input"
+              />
+              <p class="js-warning-year warning"></p>
             </li>
           </ul>
 
-          <button>
+          <button class="js-btn-calculate" title="calculate">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="46"
@@ -65,9 +75,9 @@
         </form>
 
         <div class="calculator__result">
-          <p><span class="js-display-year">38 </span> years</p>
-          <p><span class="js-display-month">3 </span>months</p>
-          <p><span class="js-display-day">26 </span>days</p>
+          <p><span class="js-display-year">-- </span> years</p>
+          <p><span class="js-display-month">-- </span> months</p>
+          <p><span class="js-display-day">-- </span> days</p>
         </div>
       </div>
     </main>
@@ -76,9 +86,11 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">lupeMorales</a>.
+        >. Coded by
+        <a href="https://github.com/lupeMorales" target="_blank">lupeMorales</a
+        >.
       </p>
     </footer>
-    <script src=".main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

@@ -23,11 +23,21 @@ main {
 }
 
 .calculator {
-  width: auto;
+  width: 50%;
   height: auto;
   padding: 40px 55px;
   border-radius: 20px 20px 150px 20px;
   background-color: hsl(0, 0%, 100%);
+}
+@media (width < 1440px) {
+  .calculator {
+    width: 95%;
+  }
+}
+@media (width < 375px) {
+  .calculator {
+    width: 315px;
+  }
 }
 .calculator__form {
   position: relative;

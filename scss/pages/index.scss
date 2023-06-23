@@ -14,11 +14,17 @@ main {
   flex-direction: column;
 }
 .calculator {
-  width: auto;
+  width: 50%;
   height: auto;
   padding: 40px 55px;
   border-radius: 20px 20px 150px 20px;
   background-color: $white;
+  @media (width < $desktop) {
+    width: 95%;
+  }
+  @media (width < $mobile) {
+    width: 315px;
+  }
 
   &__form {
     position: relative;
@@ -48,7 +54,7 @@ main {
       width: 130px;
       height: 70px;
       padding: 20px;
-      font-size: $input-size;
+      font-size: 3.2rem;
       font-weight: $weight-bold;
       border-radius: 10px;
       border: 0.3px solid $light-grey;
@@ -87,6 +93,9 @@ main {
       }
     }
   }
+  .warning {
+    color: $warning-color;
+  }
 }
 footer {
   display: flex;
@@ -100,4 +109,12 @@ footer {
     text-decoration: none;
     color: $primary-color;
   }
+}
+
+.title-red,
+warning {
+  color: $warning-color;
+}
+.border-red {
+  border-color: $warning-color;
 }
