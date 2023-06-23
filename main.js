@@ -3,7 +3,6 @@
 const inputDay = document.querySelector(".js-input-day");
 const inputMonth = document.querySelector(".js-input-month");
 const inputYear = document.querySelector(".js-input-year");
-const allInputs = document.querySelectorAll(".input");
 
 const warningDay = document.querySelector(".js-warning-day");
 const warningMonth = document.querySelector(".js-warning-month");
@@ -17,8 +16,8 @@ const button = document.querySelector(".js-btn-calculate");
 
 const date = new Date();
 const currentDay = date.getDate();
-const currentMonth = date.getMonth() + 1;
-const currentYear = date.getFullYear();
+let currentMonth = date.getMonth() + 1;
+let currentYear = date.getFullYear();
 const daysInAMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let isValid = true;
 
@@ -41,7 +40,22 @@ function resetWarning() {
   warningYear.innerText = "";
 }
 
-function initAutoFocus(input, index, list) {
+function calculateAge() {
+  if (inputDay.value > currentDay) {
+    currentDay = currentDay + daysInAMonths[currentMonth - 1];
+    currentMonth = currentMonth - 1;
+  }
+  if (inputMonth.value > currentMonth) {
+    currentMonth = currentMonth + 12;
+    currentYear = currentYear - 1;
+  }
+
+  displayDay.innerHTML = currentDay - inputDay.value;
+  displayMonth.innerHTML = currentMonth - inputMonth.value;
+  displayYear.innerHTML = currentYear - inputYear.value;
+}
+
+function autoNextInput(input, index, list) {
   const next = list[index + 1];
 
   if (!next) {
@@ -55,7 +69,9 @@ function initAutoFocus(input, index, list) {
   });
 }
 
-document.querySelectorAll("[maxlength]").forEach(initAutoFocus);
+document.querySelectorAll("[maxlength]").forEach(autoNextInput);
+
+// validate form
 
 function onlyNumbersAllow(ev) {
   if (isNaN(ev.key)) {
@@ -88,20 +104,7 @@ function validateDate() {
     isValid = false;
   }
 }
-function calculateAge() {
-  if (inputDay.value > currentDay) {
-    currentDay = currentDay + daysInAMonths[currentMonth - 1];
-    currentMonth = currentMonth - 1;
-  }
-  if (inputMonth.value > currentMonth) {
-    currentMonth = currentMonth + 12;
-    currentYear = currentYear - 1;
-  }
 
-  displayDay.innerHTML = currentDay - inputDay.value;
-  displayMonth.innerHTML = currentMonth - inputMonth.value;
-  displayYear.innerHTML = currentYear - inputYear.value;
-}
 function showWarning() {
   if (isValid === false) {
     resetDisplay();
@@ -127,3 +130,7 @@ inputMonth.addEventListener("keydown", onlyNumbersAllow);
 inputYear.addEventListener("keydown", onlyNumbersAllow);
 
 button.addEventListener("click", showResult);
+
+console.log(typeof currentDay);
+console.log(typeof currentMonth);
+console.log(typeof currentYear);
