@@ -1,13 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
 body {
   background-color: hsl(0, 0%, 94%);
   font-family: "Poppins", sans-serif;
@@ -130,6 +120,4 @@ footer a {
 
 .border-red {
   border-color: hsl(0, 100%, 67%);
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=index.css.map */

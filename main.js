@@ -21,43 +21,46 @@ const currentYear = date.getFullYear();
 const daysInAMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let isValid = true;
 
-function showWarning() {
-  if (!isValid) {
-    document
-      .querySelectorAll(".js-title")
-      .forEach((item) => item.classList.add("title-red"));
-  }
-}
-function ResetDisplay() {
+function resetDisplay() {
   displayDay.innerText = "--";
   displayMonth.innerText = "--";
   displayYear.innerText = "--";
 }
-
+function resetWarning() {
+  document
+    .querySelectorAll(".js-title")
+    .forEach((item) => item.classList.remove("title-red"));
+  document
+    .querySelectorAll(".input")
+    .forEach((item) => item.classList.remove("border-red"));
+  warningDay.innerText = "";
+  warningMonth.innerText = "";
+  warningYear.innerText = "";
+}
 function validateDate() {
   const limit = daysInAMonths[inputMonth.value - 1];
   const day = parseInt(inputDay.value);
   const month = parseInt(inputMonth.value);
   const year = parseInt(inputYear.value);
 
+  isValid = true;
+
   if (day > limit || day < 0 || day >= 31) {
     warningDay.innerHTML = "Must be a valid day";
-    !isValid;
+    isValid = false;
   }
   if (month > daysInAMonths.length || inputMonth.value <= 0) {
     warningMonth.innerHTML = "Must be a valid month";
-    !isValid;
+    isValid = false;
   }
   if (year > currentYear) {
     warningYear.innerHTML = "Must be in the past";
-    !isValid;
+    isValid = false;
   }
   if (year < 0) {
     warningYear.innerHTML = "Must be a valid year ";
-    !isValid;
+    isValid = false;
   }
-
-  isValid;
 }
 function calculateAge() {
   if (inputDay.value > currentDay) {
@@ -72,13 +75,27 @@ function calculateAge() {
   displayDay.innerHTML = currentDay - inputDay.value;
   displayMonth.innerHTML = currentMonth - inputMonth.value;
   displayYear.innerHTML = currentYear - inputYear.value;
-  console.log("NO MISIELA");
 }
+function showWarning() {
+  if (isValid === false) {
+    resetDisplay();
+    document
+      .querySelectorAll(".js-title")
+      .forEach((item) => item.classList.add("title-red"));
+    document
+      .querySelectorAll(".input")
+      .forEach((item) => item.classList.add("border-red"));
+  } else {
+    resetWarning();
+    calculateAge();
+  }
 
+  console.log(isValid);
+}
 function showResult(ev) {
   ev.preventDefault();
   validateDate();
-  /*   showWarning(); */
-  calculateAge();
+  showWarning();
+  /*   calculateAge(); */
 }
 button.addEventListener("click", showResult);
