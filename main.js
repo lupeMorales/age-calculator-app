@@ -15,61 +15,11 @@ const displayYear = document.querySelector(".js-display-year");
 const button = document.querySelector(".js-btn-calculate");
 
 const date = new Date();
-const currentDay = date.getDate();
+let currentDay = date.getDate();
 let currentMonth = date.getMonth() + 1;
 let currentYear = date.getFullYear();
 const daysInAMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let isValid = true;
-
-// resets function
-
-function resetDisplay() {
-  displayDay.innerText = "--";
-  displayMonth.innerText = "--";
-  displayYear.innerText = "--";
-}
-function resetWarning() {
-  document
-    .querySelectorAll(".js-title")
-    .forEach((item) => item.classList.remove("title-red"));
-  document
-    .querySelectorAll(".input")
-    .forEach((item) => item.classList.remove("border-red"));
-  warningDay.innerText = "";
-  warningMonth.innerText = "";
-  warningYear.innerText = "";
-}
-
-function calculateAge() {
-  if (inputDay.value > currentDay) {
-    currentDay = currentDay + daysInAMonths[currentMonth - 1];
-    currentMonth = currentMonth - 1;
-  }
-  if (inputMonth.value > currentMonth) {
-    currentMonth = currentMonth + 12;
-    currentYear = currentYear - 1;
-  }
-
-  displayDay.innerHTML = currentDay - inputDay.value;
-  displayMonth.innerHTML = currentMonth - inputMonth.value;
-  displayYear.innerHTML = currentYear - inputYear.value;
-}
-
-/* function autoNextInput(input, index, list) {
-  const next = list[index + 1];
-
-  if (!next) {
-    return;
-  }
-
-  input.addEventListener("input", () => {
-    if (input.value.length === input.maxLength) {
-      next.focus();
-    }
-  });
-} */
-
-/* document.querySelectorAll("[maxlength]").forEach(autoNextInput); */
 
 // validate form
 
@@ -120,6 +70,40 @@ function showWarning() {
   }
 }
 
+// reset functionS
+
+function resetDisplay() {
+  displayDay.innerText = "--";
+  displayMonth.innerText = "--";
+  displayYear.innerText = "--";
+}
+function resetWarning() {
+  document
+    .querySelectorAll(".js-title")
+    .forEach((item) => item.classList.remove("title-red"));
+  document
+    .querySelectorAll(".input")
+    .forEach((item) => item.classList.remove("border-red"));
+  warningDay.innerText = "";
+  warningMonth.innerText = "";
+  warningYear.innerText = "";
+}
+
+function calculateAge() {
+  if (inputDay.value > currentDay) {
+    currentDay = currentDay + daysInAMonths[currentMonth - 1];
+    currentMonth = currentMonth - 1;
+  }
+  if (inputMonth.value > currentMonth) {
+    currentMonth = currentMonth + 12;
+    currentYear = currentYear - 1;
+  }
+
+  displayDay.innerHTML = currentDay - inputDay.value;
+  displayMonth.innerHTML = currentMonth - inputMonth.value;
+  displayYear.innerHTML = currentYear - inputYear.value;
+}
+
 function pressEnter(ev) {
   if (ev.keyCode === 13) {
     ev.preventDefault();
@@ -140,7 +124,3 @@ inputYear.addEventListener("keydown", onlyNumbersAllow);
 inputYear.addEventListener("keydown", pressEnter);
 
 button.addEventListener("click", showResult);
-
-console.log(typeof currentDay);
-console.log(typeof currentMonth);
-console.log(typeof currentYear);
