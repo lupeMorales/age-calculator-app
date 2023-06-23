@@ -1,5 +1,5 @@
 
-# Frontend Mentor - Tip calculator app
+# Frontend Mentor - Age calculator app [Demo](https://lupemorales.github.io/age-calculator-app/)
 
 
 ## Welcome! 👋
@@ -43,8 +43,8 @@ The challenge is to build out a age calculator app and get it looking as close t
 
 ### Links
 
-- Solution URL: [Code](https://github.com/lupeMorales/tip-calculator-app)
-- Live Site URL: [Demo](https://lupemorales.github.io/tip-calculator-app/)
+- Solution URL: [Code](https://github.com/lupeMorales/age-calculator-app/settings)
+- Live Site URL: [Demo](https://lupemorales.github.io/age-calculator-app/)
  
 ## Built with
 
