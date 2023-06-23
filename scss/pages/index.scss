@@ -67,6 +67,12 @@ main {
       }
     }
 
+    .warning p {
+      color: $warning-color;
+      font-size: 1.3rem;
+      font-weight: $weight-normal;
+    }
+
     button {
       position: absolute;
       padding: 20px;
@@ -93,9 +99,6 @@ main {
       }
     }
   }
-  .warning {
-    color: $warning-color;
-  }
 }
 footer {
   display: flex;
@@ -111,10 +114,11 @@ footer {
   }
 }
 
-.title-red,
-warning {
+/* .title-red
+ {
   color: $warning-color;
 }
 .border-red {
   border-color: $warning-color;
 }
+ */

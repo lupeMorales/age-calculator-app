@@ -78,7 +78,7 @@ function calculateAge() {
 function showResult(ev) {
   ev.preventDefault();
   validateDate();
-  showWarning();
+  /*   showWarning(); */
   calculateAge();
 }
 button.addEventListener("click", showResult);
