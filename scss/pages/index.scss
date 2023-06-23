@@ -21,6 +21,7 @@ main {
   background-color: $white;
   @media (width < $desktop) {
     width: 95%;
+    padding: 40px 25px;
   }
   @media (width < $mobile) {
     width: 315px;
@@ -30,11 +31,19 @@ main {
     position: relative;
     padding: 20px 180px 48px 0;
     border-bottom: 2px solid $off-white;
+    width: 100%;
+    @media (width < 426px) {
+      padding: 20px 10px 48px 10px;
+    }
 
     ul {
       display: flex;
       gap: 30px;
       list-style: none;
+      @media (width < 426px) {
+        gap: 15px;
+        justify-content: center;
+      }
       li {
         display: flex;
         flex-direction: column;
@@ -70,8 +79,9 @@ main {
       }
 
       @media (width < 426px) {
-        width: 80px;
+        width: 95px;
         height: 50px;
+        font-size: 2.3rem;
       }
     }
 
@@ -96,7 +106,7 @@ main {
       }
 
       @media (width < 426px) {
-        transform: scale(0.5) translate(-210px);
+        transform: scale(0.5) translate(-210px, 10px);
       }
     }
     .title-red {
