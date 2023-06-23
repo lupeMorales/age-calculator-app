@@ -22,6 +22,8 @@ const currentYear = date.getFullYear();
 const daysInAMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 let isValid = true;
 
+// resets function
+
 function resetDisplay() {
   displayDay.innerText = "--";
   displayMonth.innerText = "--";
@@ -38,6 +40,23 @@ function resetWarning() {
   warningMonth.innerText = "";
   warningYear.innerText = "";
 }
+
+function initAutoFocus(input, index, list) {
+  const next = list[index + 1];
+
+  if (!next) {
+    return;
+  }
+
+  input.addEventListener("input", () => {
+    if (input.value.length === input.maxLength) {
+      next.focus();
+    }
+  });
+}
+
+document.querySelectorAll("[maxlength]").forEach(initAutoFocus);
+
 function onlyNumbersAllow(ev) {
   if (isNaN(ev.key)) {
     ev.preventDefault();
@@ -96,8 +115,6 @@ function showWarning() {
     resetWarning();
     calculateAge();
   }
-
-  console.log(isValid);
 }
 function showResult(ev) {
   ev.preventDefault();
@@ -105,11 +122,8 @@ function showResult(ev) {
   showWarning();
 }
 
-function sayHI() {
-  console.log("HI!");
-}
-
-button.addEventListener("click", showResult);
 inputDay.addEventListener("keydown", onlyNumbersAllow);
 inputMonth.addEventListener("keydown", onlyNumbersAllow);
 inputYear.addEventListener("keydown", onlyNumbersAllow);
+
+button.addEventListener("click", showResult);
