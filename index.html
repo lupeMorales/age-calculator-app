@@ -30,9 +30,12 @@
               <label for="day" class="js-title">day</label>
               <input
                 type="text"
+                maxlength="2"
                 name="day"
                 id="day"
                 class="js-input-day input"
+                autofocus
+                onkeyup="if (this.value.length == this.getAttribute('maxlength')) month.focus()"
               />
               <p class="js-warning-day warning"></p>
             </li>
@@ -40,9 +43,11 @@
               <label for="month" class="js-title">month</label>
               <input
                 type="text"
+                maxlength="2"
                 name="month"
                 id="month"
                 class="js-input-month input"
+                onkeyup="if (this.value.length == this.getAttribute('maxlength')) year.focus()"
               />
               <p class="js-warning-month warning"></p>
             </li>
@@ -50,15 +55,17 @@
               <label for="year" class="js-title">year</label>
               <input
                 type="text"
+                maxlength="4"
                 name="year"
                 id="year"
                 class="js-input-year input"
+                onkeyup="if (this.value.length == this.getAttribute('maxlength')) button.focus()"
               />
               <p class="js-warning-year warning"></p>
             </li>
           </ul>
 
-          <button class="js-btn-calculate" title="calculate">
+          <button class="js-btn-calculate" title="calculate" id="button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="46"
