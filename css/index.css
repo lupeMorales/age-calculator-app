@@ -51,6 +51,11 @@ main {
   letter-spacing: 3.5px;
   color: hsl(0, 1%, 44%);
 }
+@media (width < 426px) {
+  .calculator__form .js-title {
+    font-size: 1.2rem;
+  }
+}
 .calculator__form .input {
   display: inline-block;
   width: 130px;
@@ -68,6 +73,12 @@ main {
 .calculator__form .input:hover {
   border-color: hsl(259, 100%, 65%);
 }
+@media (width < 426px) {
+  .calculator__form .input {
+    width: 80px;
+    height: 50px;
+  }
+}
 .calculator__form p {
   color: hsl(0, 100%, 67%);
   font-style: italic;
@@ -84,8 +95,13 @@ main {
   right: 0;
   transform: translateY(5px);
 }
-.calculator__form button:hover {
+.calculator__form button:focus {
   background-color: hsl(259, 100%, 65%);
+}
+@media (width < 426px) {
+  .calculator__form button {
+    transform: scale(0.5) translate(-210px);
+  }
 }
 .calculator__form .title-red {
   color: hsl(0, 100%, 67%);
@@ -101,6 +117,11 @@ main {
   font-size: 10rem;
   font-weight: 800;
   font-style: italic;
+}
+@media (width < 426px) {
+  .calculator__result p {
+    font-size: 5rem;
+  }
 }
 .calculator__result p span {
   color: hsl(259, 100%, 65%);

@@ -48,6 +48,9 @@ main {
       font-weight: $weight-normal;
       letter-spacing: 3.5px;
       color: $smokey-grey;
+      @media (width < 426px) {
+        font-size: 1.2rem;
+      }
     }
     .input {
       display: inline-block;
@@ -64,6 +67,11 @@ main {
       caret-shape: bar;
       &:hover {
         border-color: $primary-color;
+      }
+
+      @media (width < 426px) {
+        width: 80px;
+        height: 50px;
       }
     }
 
@@ -83,8 +91,12 @@ main {
       border-radius: 50%;
       right: 0;
       transform: translateY(5px);
-      &:hover {
+      &:focus {
         background-color: $primary-color;
+      }
+
+      @media (width < 426px) {
+        transform: scale(0.5) translate(-210px);
       }
     }
     .title-red {
@@ -101,6 +113,9 @@ main {
       font-size: 10rem;
       font-weight: 800;
       font-style: italic;
+      @media (width < 426px) {
+        font-size: 5rem;
+      }
 
       span {
         color: $primary-color;
