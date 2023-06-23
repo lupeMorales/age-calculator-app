@@ -37,7 +37,7 @@ function validateDate() {
 
   isValid = true;
 
-  if (day > limit || day < 0 || day >= 31) {
+  if (day > limit || day < 0 || day > 31) {
     warningDay.innerHTML = "Must be a valid day";
     isValid = false;
   }
