@@ -49,7 +49,7 @@ main {
       letter-spacing: 3.5px;
       color: $smokey-grey;
     }
-    input {
+    .input {
       display: inline-block;
       width: 130px;
       height: 70px;
@@ -87,6 +87,12 @@ main {
         background-color: $primary-color;
       }
     }
+    .title-red {
+      color: $warning-color;
+    }
+    .border-red {
+      border-color: $warning-color;
+    }
   }
   &__result {
     padding: 60px 0 20px;
@@ -114,11 +120,4 @@ footer {
     text-decoration: none;
     color: $primary-color;
   }
-}
-
-.title-red {
-  color: $warning-color;
-}
-.border-red {
-  border-color: $warning-color;
 }

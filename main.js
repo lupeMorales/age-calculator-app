@@ -42,6 +42,7 @@ function validateDate() {
   const day = parseInt(inputDay.value);
   const month = parseInt(inputMonth.value);
   const year = parseInt(inputYear.value);
+  const valoresAceptados = /^[0-9]+$/;
 
   isValid = true;
 

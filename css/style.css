@@ -61,7 +61,7 @@ main {
   letter-spacing: 3.5px;
   color: hsl(0, 1%, 44%);
 }
-.calculator__form input {
+.calculator__form .input {
   display: inline-block;
   width: 130px;
   height: 70px;
@@ -75,7 +75,7 @@ main {
   caret-color: hsl(259, 100%, 65%);
   caret-shape: bar;
 }
-.calculator__form input:hover {
+.calculator__form .input:hover {
   border-color: hsl(259, 100%, 65%);
 }
 .calculator__form p {
@@ -96,6 +96,12 @@ main {
 }
 .calculator__form button:hover {
   background-color: hsl(259, 100%, 65%);
+}
+.calculator__form .title-red {
+  color: hsl(0, 100%, 67%);
+}
+.calculator__form .border-red {
+  border-color: hsl(0, 100%, 67%);
 }
 .calculator__result {
   padding: 60px 0 20px;
@@ -122,14 +128,6 @@ footer a {
   cursor: pointer;
   text-decoration: none;
   color: hsl(259, 100%, 65%);
-}
-
-.title-red {
-  color: hsl(0, 100%, 67%);
-}
-
-.border-red {
-  border-color: hsl(0, 100%, 67%);
 }
 
 /*# sourceMappingURL=style.css.map */
