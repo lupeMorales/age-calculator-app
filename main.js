@@ -3,6 +3,7 @@
 const inputDay = document.querySelector(".js-input-day");
 const inputMonth = document.querySelector(".js-input-month");
 const inputYear = document.querySelector(".js-input-year");
+const allInputs = document.querySelectorAll(".input");
 
 const warningDay = document.querySelector(".js-warning-day");
 const warningMonth = document.querySelector(".js-warning-month");
@@ -37,12 +38,17 @@ function resetWarning() {
   warningMonth.innerText = "";
   warningYear.innerText = "";
 }
+function onlyNumbersAllow(ev) {
+  if (isNaN(ev.key)) {
+    ev.preventDefault();
+  }
+}
+
 function validateDate() {
   const limit = daysInAMonths[inputMonth.value - 1];
   const day = parseInt(inputDay.value);
   const month = parseInt(inputMonth.value);
   const year = parseInt(inputYear.value);
-  const valoresAceptados = /^[0-9]+$/;
 
   isValid = true;
 
@@ -97,6 +103,13 @@ function showResult(ev) {
   ev.preventDefault();
   validateDate();
   showWarning();
-  /*   calculateAge(); */
 }
+
+function sayHI() {
+  console.log("HI!");
+}
+
 button.addEventListener("click", showResult);
+inputDay.addEventListener("keydown", onlyNumbersAllow);
+inputMonth.addEventListener("keydown", onlyNumbersAllow);
+inputYear.addEventListener("keydown", onlyNumbersAllow);
