@@ -41,7 +41,7 @@ main {
       gap: 30px;
       list-style: none;
       @media (width < 426px) {
-        gap: 15px;
+        gap: 5px;
         justify-content: center;
       }
       li {
@@ -58,6 +58,7 @@ main {
       letter-spacing: 3.5px;
       color: $smokey-grey;
       @media (width < 426px) {
+        padding-left: 3px;
         font-size: 1.2rem;
       }
     }
@@ -106,7 +107,7 @@ main {
       }
 
       @media (width < 426px) {
-        transform: scale(0.5) translate(-210px, 10px);
+        transform: scale(0.6) translate(-50vw, 15px);
       }
     }
     .title-red {
@@ -125,7 +126,7 @@ main {
       font-style: italic;
 
       @media (width < 426px) {
-        font-size: 5rem;
+        font-size: 4.5rem;
       }
 
       span {

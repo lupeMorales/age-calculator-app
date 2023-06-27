@@ -58,7 +58,7 @@ main {
 }
 @media (width < 426px) {
   .calculator__form ul {
-    gap: 15px;
+    gap: 5px;
     justify-content: center;
   }
 }
@@ -76,6 +76,7 @@ main {
 }
 @media (width < 426px) {
   .calculator__form .js-title {
+    padding-left: 3px;
     font-size: 1.2rem;
   }
 }
@@ -124,7 +125,7 @@ main {
 }
 @media (width < 426px) {
   .calculator__form button {
-    transform: scale(0.5) translate(-210px, 10px);
+    transform: scale(0.6) translate(-50vw, 15px);
   }
 }
 .calculator__form .title-red {
@@ -144,7 +145,7 @@ main {
 }
 @media (width < 426px) {
   .calculator__result p {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 }
 .calculator__result p span {
