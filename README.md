@@ -34,6 +34,7 @@ The challenge is to build out a age calculator app and get it looking as close t
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 - Bonus: See the age numbers animate to their final number when the form is submitted
+- Bonus: Check if the year is a leap year
 
 ### Screenshot
 
@@ -62,5 +63,5 @@ The challenge is to build out a age calculator app and get it looking as close t
 
 
 
-**Have fun coding!** 🚀
+**LHave fun coding!** 🚀
 
