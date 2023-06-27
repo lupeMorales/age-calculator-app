@@ -29,14 +29,20 @@ function onlyNumbersAllow(ev) {
   }
 }
 
+function isLeapYear(year) {
+  return year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0;
+}
+
 function validateDate() {
-  const limit = daysInAMonths[inputMonth.value - 1];
+  let limit = daysInAMonths[inputMonth.value - 1];
   const day = parseInt(inputDay.value);
   const month = parseInt(inputMonth.value);
   const year = parseInt(inputYear.value);
 
   isValid = true;
-
+  if (isLeapYear(year) && month === 2) {
+    limit = 29;
+  }
   if (day > limit || day < 0 || day > 31) {
     warningDay.innerHTML = "Must be a valid day";
     isValid = false;
